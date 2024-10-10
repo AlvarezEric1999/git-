@@ -1,9 +1,10 @@
 import { useState } from 'react'
 import logo from './assets/logo.png'
-import Modall from './Modall'
+import Modal from './Modal'
 
 function App() {
  
+  //estados 
   const [ user, setUser] = useState("")
   const [password, setPassword]= useState('')
   const [open,setOpen] = useState(false)
@@ -23,6 +24,8 @@ function App() {
     console.log("contrasena : " + e.target.value)
   }
 
+
+  //validacion de usuario y manejo de eventos
   const validateUser = (event)=>{
 
 
@@ -72,7 +75,7 @@ function App() {
 
   </main>
 
-  <Modall messageColor={messageColor} open={open} onClose={()=>setOpen(false)} message={message}></Modall>
+  <Modal messageColor={messageColor} open={open} onClose={()=>setOpen(false)} message={message}></Modal>
 
     </div>
   )

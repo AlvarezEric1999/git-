@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Modall = ({messageColor,open,onClose,message}) => {
+const Modal = ({messageColor,open,onClose,message}) => {
   
     
 
@@ -21,4 +21,4 @@ const Modall = ({messageColor,open,onClose,message}) => {
   )
 }
 
-export default Modall
+export default Modal
