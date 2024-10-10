@@ -1,12 +1,14 @@
 import { useState } from 'react'
 import logo from './assets/logo.png'
+import Modall from './Modall'
 
 function App() {
  
   const [ user, setUser] = useState("")
   const [password, setPassword]= useState('')
-
-
+  const [open,setOpen] = useState(false)
+  const [message,setMessage]= useState('')
+  const [messageColor ,setMessageColor] = useState(true)
 
   const changeUser = (e)=>{
 
@@ -21,17 +23,27 @@ function App() {
     console.log("contrasena : " + e.target.value)
   }
 
-  const validateUser = ()=>{
+  const validateUser = (event)=>{
 
 
+    event.preventDefault();
+    
+    console.log( message )
     if (user == "Eric" && password =="1061048375") {
 
-      alert("datos correctos")
+      //alert("datos correctos")
+      setOpen(true)
+      setMessage("datos correctos")
+      setMessageColor(false)
 
     }
     else{
 
-      alert("datos incorrectos")
+      //alert("datos incorrectos")
+      setOpen(true)
+      setMessage("Datos Incorrectos")
+      setMessageColor(true)
+
 
 
   }
@@ -60,6 +72,7 @@ function App() {
 
   </main>
 
+  <Modall messageColor={messageColor} open={open} onClose={()=>setOpen(false)} message={message}></Modall>
 
     </div>
   )
